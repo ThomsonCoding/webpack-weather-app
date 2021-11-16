@@ -1,5 +1,10 @@
 $input-colour: green;
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .weather_input_search {
   background-color: $input-colour;
 }

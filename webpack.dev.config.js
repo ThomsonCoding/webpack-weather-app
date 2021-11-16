@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
     entry: './src/js/index.js',
@@ -22,7 +21,7 @@ module.exports = {
             use: [
                 MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
             ]
-        }    
+        },    
         ]
     },
     plugins: [
@@ -35,7 +34,6 @@ module.exports = {
                 '**/*',
                 path.join(process.cwd(), 'build/**/*')
             ]
-        }),
-        new ESLintPlugin(options),
+        })
     ]
 };

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "weather-application.scss"
+    ],
+    "names": [],
+    "file": "weather-application.css"
+}

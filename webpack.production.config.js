@@ -22,11 +22,13 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
                 ]
-            }   
+            },   
             ]
         },
         plugins: [
-            new HtmlWebpackPlugin(),
+            new HtmlWebpackPlugin({
+                title: 'Weather Application',
+            }),
             new MiniCssExtractPlugin({
                 filename: 'index.css',
             }),

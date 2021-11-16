@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,IAAI,CAAC;EACH,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;CACvB;;AAED,AAAA,qBAAqB,CAAC;EACpB,gBAAgB,EARH,KAAK;CASnB",
+    "sources": [
+        "weather-app.scss"
+    ],
+    "names": [],
+    "file": "weather-app.css"
+}

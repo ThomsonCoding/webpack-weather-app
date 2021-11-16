@@ -33,6 +33,30 @@
     "style-loader": "^3.3.1",
     "webpack": "^5.64.0",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.5.0"
-  }
+    "webpack-dev-server": "^4.5.0",
+    "xo": "^0.41.0"
+	},
+	"xo": {
+		"env": [
+			"browser",
+			"es6"
+		],
+		"prettier": true,
+		"ignores": [
+			"./webpack/**/*.js",
+			"./*.js",
+			"./assets/*.js"
+		]
+	},
+	"eslintConfig": {
+		"extends": "xo"
+	},
+	"prettier": {
+		"printWidth": 100,
+		"tabWidth": 2,
+		"singleQuote": true,
+		"trailingComma": "all",
+		"bracketSpacing": false,
+		"arrowParens": "avoid"
+	}
 }
