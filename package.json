@@ -12,12 +12,28 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/preset-react": "^7.16.0",
     "@squoosh/lib": "^0.4.0",
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
     "babel-eslint": "^10.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.5.1",
     "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-wesbos": "^2.1.0",
     "eslint-loader": "^4.0.2",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-webpack-plugin": "^3.1.1",
     "html-webpack-plugin": "^5.5.0",
     "image-minimizer-webpack-plugin": "^2.2.0",
@@ -28,35 +44,37 @@
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^10.0.0",
     "mini-css-extract-plugin": "^2.4.4",
+    "prettier": "^2.4.1",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
+    "typescript": "^4.4.4",
     "webpack": "^5.64.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0",
     "xo": "^0.41.0"
-	},
-	"xo": {
-		"env": [
-			"browser",
-			"es6"
-		],
-		"prettier": true,
-		"ignores": [
-			"./webpack/**/*.js",
-			"./*.js",
-			"./assets/*.js"
-		]
-	},
-	"eslintConfig": {
-		"extends": "xo"
-	},
-	"prettier": {
-		"printWidth": 100,
-		"tabWidth": 2,
-		"singleQuote": true,
-		"trailingComma": "all",
-		"bracketSpacing": false,
-		"arrowParens": "avoid"
-	}
+  },
+  "xo": {
+    "env": [
+      "browser",
+      "es6"
+    ],
+    "prettier": true,
+    "ignores": [
+      "./webpack/**/*.js",
+      "./*.js",
+      "./assets/*.js"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "xo"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": false,
+    "arrowParens": "avoid"
+  }
 }
