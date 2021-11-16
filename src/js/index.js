@@ -1,7 +1,9 @@
-import test from './weather-app.js';
-import addImage from './add-image.js';
+import '../SCSS/weather-app.scss';
 
-console.log('connected');
+const searchInput = document.querySelector('.search_inputbox');
+const searchButton = document.querySelector('.search_button');
 
-test();
-addImage();
+searchButton.addEventListener('click', () => {
+  const currentValue = searchInput.value;
+  console.log(currentValue);
+});

@@ -1,10 +1,129 @@
-$input-colour: green;
+$background-colour: #090d38;
+$input-colour: #232247;
+$header-colour: #ffffff;
+$sub-colour: #ffffffb0;
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  background-image: linear-gradient(to bottom left, $background-colour, #04040f);
+}
+
+.main_header {
+  font-size: 1.2rem;
+  color: $header-colour;
+  margin: 10px 0px 0px 0px;
+}
+
+.sub_text {
+  color: $sub-colour;
+  margin: 20px 5px 30px 5px;
 }
 
 .weather_input_search {
   background-color: $input-colour;
+  max-width: 90%;
+  height: 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 2.5rem;
+  padding: 5px 20px;
+}
+
+.input_section button {
+  border: none;
+  background-color: $input-colour;
+  color: $sub-colour;
+  margin-right: 0px;
+  padding: 10px 20px;
+}
+
+.search_inputbox {
+  border: none;
+  background-color: $input-colour;
+  color: $sub-colour;
+  margin: 0px 10px 0px 0px;
+  padding: 10px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.search_button {
+  border-radius: 10px 0px 0px 10px;
+}
+
+.location_button {
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.results_seaction {
+  width: 100%;
+  padding: 0px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px 20px;
+  grid-template-areas:
+    'city_1 city_2'
+    'city_3 city_4';
+  justify-items: stretch;
+  padding: 0px;
+  margin-top: 40px;
+}
+
+.container li {
+  border-radius: 15px;
+  color: $sub-colour;
+  background-color: $input-colour;
+  text-align: left;
+  padding: 5px 15px;
+}
+
+.container li:nth-child(1) {
+  margin-bottom: 10px;
+  background-color: #3c84dc;
+}
+
+.container li:nth-child(2) {
+  margin-top: 10px;
+}
+
+.container li:nth-child(3) {
+  margin-bottom: 10px;
+}
+
+.container li:nth-child(4) {
+  margin-top: 10px;
+}
+
+.city_1 {
+  grid-area: city_1;
+}
+.city_2 {
+  grid-area: city_2;
+}
+.city_3 {
+  grid-area: city_3;
+}
+.city_4 {
+  grid-area: city_4;
 }

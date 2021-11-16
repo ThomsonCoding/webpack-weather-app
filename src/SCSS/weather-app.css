@@ -6,9 +6,137 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 10px;
+  background-color: #090d38;
+}
+
+.main_header {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 10px 0px 0px 0px;
+}
+
+.sub_text {
+  color: #ffffffb0;
+  margin: 20px 5px 30px 5px;
 }
 
 .weather_input_search {
-  background-color: green;
+  background-color: #232247;
+  max-width: 80%;
+  height: 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 2.5rem;
+  padding: 5px;
+}
+
+.input_section button {
+  border: none;
+  background-color: #232247;
+  color: #ffffffb0;
+  margin-right: 0px;
+  padding: 10px;
+}
+
+.search_inputbox {
+  border: none;
+  background-color: #232247;
+  color: #ffffffb0;
+  margin: 0px 10px 0px 0px;
+  padding: 10px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.search_button {
+  border-radius: 10px 0px 0px 10px;
+}
+
+.location_button {
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.results_seaction {
+  width: 100%;
+  padding: 0px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  gap: 20px 20px;
+      grid-template-areas: 'city_1 city_2' 'city_3 city_4';
+  justify-items: stretch;
+  padding: 0px;
+  margin-top: 40px;
+}
+
+.container li {
+  border-radius: 15px;
+  color: #ffffffb0;
+  background-color: #232247;
+  text-align: left;
+  padding: 5px 15px;
+}
+
+.container li:nth-child(1) {
+  margin-bottom: 10px;
+  background-color: #3c84dc;
+}
+
+.container li:nth-child(2) {
+  margin-top: 10px;
+}
+
+.container li:nth-child(3) {
+  margin-bottom: 10px;
+}
+
+.container li:nth-child(4) {
+  margin-top: 10px;
+}
+
+.city_1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: city_1;
+}
+
+.city_2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: city_2;
+}
+
+.city_3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: city_3;
+}
+
+.city_4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: city_4;
 }
 /*# sourceMappingURL=weather-app.css.map */

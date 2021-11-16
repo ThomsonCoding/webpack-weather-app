@@ -25,7 +25,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Weather Application',
+      template: 'index.html',
     }),
     new MiniCssExtractPlugin({
       filename: 'index.css',
