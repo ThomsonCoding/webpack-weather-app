@@ -1,9 +1,11 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/js/index.js',
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, './dist')
@@ -16,25 +18,24 @@ module.exports = {
             type: 'asset',
         },
         {
-            test: /\.css$/,
-            use: [
-                'style-loader', 'css-loader'
-            ]
-        },
-        {
             test: /\.scss$/,
             use: [
-                MiniCssExtractPlugin.loader, 'style-loader', 'css-loader', 'sass-loader'
+                MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
             ]
         }    
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin(),
+            new MiniCssExtractPlugin({
+                filename: 'index.css',
+            }),
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: [
                 '**/*',
                 path.join(process.cwd(), 'build/**/*')
             ]
         }),
+        new ESLintPlugin(options),
     ]
 };

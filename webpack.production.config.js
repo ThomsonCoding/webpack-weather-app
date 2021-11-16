@@ -1,25 +1,21 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/js/index.js',
     output: {
         filename: 'index.js',
-        path: path.resolve(__dirname, './dist')
+        path: path.resolve(__dirname, './dist'),
     },
     mode: 'production',
     module: {
         rules: [
             {
-                test: /\.(png|jpg|jpeg)$/,
-                type: 'asset',
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader, 'css-loader'
-                ]
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                type: "asset",
             },
             {
                 test: /\.scss$/,
@@ -30,6 +26,7 @@ module.exports = {
             ]
         },
         plugins: [
+            new HtmlWebpackPlugin(),
             new MiniCssExtractPlugin({
                 filename: 'index.css',
             }),
@@ -38,6 +35,9 @@ module.exports = {
                     '**/*',
                     path.join(process.cwd(), 'build/**/*')
                 ]
-            })
+            }),
+            new ImageMinimizerPlugin({
+                test: /\.(jpe?g|png|gif|svg)$/i,
+            }),
         ]
     };
