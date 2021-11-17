@@ -18,9 +18,11 @@ body {
   font-size: 1.2rem;
   color: $header-colour;
   margin: 10px 0px 0px 0px;
+  font-weight: 400;
 }
 
 .sub_text {
+  font-size: 0.9rem;
   color: $sub-colour;
   margin: 20px 5px 30px 5px;
 }
@@ -32,7 +34,7 @@ body {
   border: none;
   border-radius: 25px;
   font-size: 2.5rem;
-  padding: 5px 20px;
+  padding: 5px 10px;
 }
 
 .input_section button {
@@ -40,14 +42,14 @@ body {
   background-color: $input-colour;
   color: $sub-colour;
   margin-right: 0px;
-  padding: 10px 20px;
+  padding: 10px 15px;
 }
 
 .search_inputbox {
   border: none;
   background-color: $input-colour;
   color: $sub-colour;
-  margin: 0px 10px 0px 0px;
+  margin: 0px 5px 0px -5px;
   padding: 10px;
   border-radius: 0px 10px 10px 0px;
 }
@@ -81,7 +83,7 @@ ul {
   grid-auto-flow: column;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 20px 20px;
+  gap: 10px 20px;
   grid-template-areas:
     'city_1 city_2'
     'city_3 city_4';
@@ -101,29 +103,34 @@ ul {
 .container li:nth-child(1) {
   margin-bottom: 10px;
   background-color: #3c84dc;
+  box-shadow: 2px;
+  grid-area: city_1;
 }
 
 .container li:nth-child(2) {
   margin-top: 10px;
+  grid-area: city_2;
 }
 
 .container li:nth-child(3) {
   margin-bottom: 10px;
+  grid-area: city_3;
 }
 
 .container li:nth-child(4) {
   margin-top: 10px;
+  grid-area: city_4;
 }
 
-.city_1 {
-  grid-area: city_1;
+.city_temp {
+  margin: 5px 0px;
 }
-.city_2 {
-  grid-area: city_2;
+
+.city_weather {
+  margin: 5px 0px;
 }
-.city_3 {
-  grid-area: city_3;
-}
-.city_4 {
-  grid-area: city_4;
+
+.city_name {
+  font-weight: 400;
+  margin-bottom: 15px;
 }
