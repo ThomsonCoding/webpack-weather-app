@@ -3,6 +3,8 @@ import forcastReportsFetch from './forcastReportsFetch';
 
 const scroll = document.createElement('ul');
 const nextForcastList = document.createElement('ul');
+const todaysDate = new Date();
+const currentHour = todaysDate.getHours();
 
 const addForcastReport = (lat, lon) => {
     console.log(lat, lon);
@@ -69,15 +71,18 @@ const addForcastReport = (lat, lon) => {
 }
 
 const hoursList = (hours) => {
-    hours.forEach(hour => {
+    hours.forEach((hour, i) => {
         const hourListItem = document.createElement('li');
         scroll.appendChild(hourListItem);
-
         const weatherIcon = document.createElement('img');
         weatherIcon.src = `http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`
         weatherIcon.classList.add("hour_image_icon");
 
         hourListItem.appendChild(weatherIcon);
+        const whichHour = document.createElement('p');
+        whichHour.textContent = `${hourCalc(i)}`;
+        whichHour.classList.add('mini_temp');
+        hourListItem.appendChild(whichHour);
 
         const hourTemp = document.createElement('p');
         hourTemp.textContent = `${Math.round(hour.temp)}°`;
@@ -88,7 +93,6 @@ const hoursList = (hours) => {
 }
 
 const dailyList = (days) => {
-    console.log(days);
     days.forEach((day, i) => {
         const dayListItem = document.createElement('li');
         nextForcastList.appendChild(dayListItem);
@@ -100,8 +104,7 @@ const dailyList = (days) => {
         const dayTemp = document.createElement('p');
         dayTemp.textContent = `${Math.round(day.temp.day)}°`;
         dayTemp.classList.add('mini_temp'); // To change
-        dayListItem.appendChild(dayTemp);        
-
+        dayListItem.appendChild(dayTemp);
 
         const weatherIcon = document.createElement('img');
         weatherIcon.src = `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`
@@ -112,9 +115,19 @@ const dailyList = (days) => {
     })
 }
 
-const date =(i) => {
-    const todaysDate = new Date();
+const hourCalc = (i) => {
+    let hourNumber = currentHour + i;
 
+    if(hourNumber > 23) { hourNumber = (currentHour + i) - 24; }
+
+    if (hourNumber < 10) {
+     return ("0" + hourNumber.toFixed(2));
+    }
+
+    return hourNumber.toFixed(2);
+}
+
+const date = (i) => {
     const weekday = new Array(7);
     weekday[0] = "Sunday";
     weekday[1] = "Monday";
@@ -123,18 +136,15 @@ const date =(i) => {
     weekday[4] = "Thursday";
     weekday[5] = "Friday";
     weekday[6] = "Saturday";
-    weekday[7] = "Sunday";
-    weekday[8] = "Monday";
-    weekday[9] = "Tuesday";
-    weekday[10] = "Wednesday";
-    weekday[11] = "Thursday";
-    weekday[12] = "Friday";
-    weekday[13] = "Saturday";
 
-    let day = weekday[todaysDate.getDay() + i];
-    
+    let dateNumber = todaysDate.getDay() + i;
+
+    //Prevents the array selection number from being above 6
+    if(todaysDate.getDay() + i > 6) {
+        dateNumber = (todaysDate.getDay() + i) - 7;
+    } 
+    let day = weekday[dateNumber];
     return day;
 }
-
 
 export default addForcastReport;
