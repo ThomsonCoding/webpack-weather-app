@@ -12,3 +12,5 @@ const getCurrent = async function (location){
 };
 
 export default getCurrent;
+
+//&cnt={cnt} 
