@@ -43,6 +43,11 @@ body {
   padding: 5px 10px;
 }
 
+.input_section {
+  display: flex;
+  justify-content: center;
+}
+
 .input_section button {
   border: none;
   background-color: $input-colour;

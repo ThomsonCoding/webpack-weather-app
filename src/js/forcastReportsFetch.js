@@ -6,9 +6,7 @@ const forcastReportsFetch = async function (lat, lon){
     );
     
     const data = await response.json();
-
-    console.log(data);
-
+    
     return data;
 
 };

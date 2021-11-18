@@ -9,9 +9,104 @@ $sub-colour: #ffffffb0;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
   margin: 0;
   padding: 15px 10px;
   background-image: linear-gradient(to bottom left, $background-colour, #04040f);
+}
+
+.return_button {
+  margin: 20px 20px 0px 20px;
+  color: $sub-colour;
+  background-color: transparent;
+  border: none;
+  height: 50px;
+  font-size: 20px;
+}
+
+.return_button:hover {
+  color: $header-colour;
+}
+
+.today_mini_header {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $sub-colour;
+  margin: 20px 5px 30px 5px;
+}
+
+.hourly__container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  justify-content: flex-start;
+  height: auto;
+  width: auto;
+}
+
+.hourly__container::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hourly__container li {
+  display: flex;
+  align-items: center;
+  background-color: $input-colour;
+  border-radius: 20px;
+  margin: 0px 5px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.hourly__container li:nth-child(1) {
+  background-color: #3c84dc;
+}
+
+.mini_temp {
+  color: $sub-colour;
+  padding: 10px 15px;
+}
+
+.hour_image_icon {
+  height: 60px;
+  width: 60px;
+}
+
+.daily__container {
+  display: flex;
+  height: 350px;
+  width: auto;
+  overflow: scroll;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.daily__container::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.daily__container li {
+  display: flex;
+  align-items: center;
+  background-color: $input-colour;
+  border-radius: 20px;
+  width: 85%;
+  margin: 10px 5px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  justify-content: center;
 }

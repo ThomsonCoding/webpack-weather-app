@@ -7,9 +7,11 @@ const addWeatherReport = (data) => {
     console.log(data);
 
     const city = document.createElement('li');
+    city.dataset.lat = data.coord.lat;
+    city.dataset.lon = data.coord.lon;
     city.classList.add("city__container")
     city.addEventListener("click", () => {
-        addForcastReport("51.5085", "-0.1257");
+        addForcastReport(city.dataset.lat, city.dataset.lon);
     });
     
     const cityTemp = document.createElement('h3');
