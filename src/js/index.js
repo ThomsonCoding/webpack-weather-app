@@ -14,6 +14,7 @@ window.addEventListener('load', () => {
     let Locallocations = localStorage.getItem('Locations');
     locations = JSON.parse(Locallocations);
   }
+
     locations.forEach(location => {
       getCurrent(location).then((data) => {addWeatherReport(data)});
     })
@@ -21,21 +22,20 @@ window.addEventListener('load', () => {
 
 const weatherSearch = () => {
   const currentValue = searchInput.value.toLowerCase();
+  updateLocations();
 
   if(locations.includes(currentValue)){
-    console.log(locations);
     alert("You have searched this place already");
     return
   }
 
-  locations.push(currentValue);
+  getCurrent(currentValue).then((data) => {addWeatherReport(data)});
 
   if(locations.length > 4) {
     locations.shift();
   }
 
-  localStorage.setItem('Locations', JSON.stringify(locations));
-  getCurrent(currentValue).then((data) => {addWeatherReport(data)});
+  updateLocations();
 }
 
 searchButton.addEventListener('click', () => {weatherSearch(); });
@@ -47,10 +47,10 @@ searchInput.addEventListener('keypress', (e) => {
 });
 
 locationButton.addEventListener('click', () => {
-  window.navigator.geolocation.getCurrentPosition(success, console.log);
+  window.navigator.geolocation.getCurrentPosition(geoLocationSuccess, console.log);
 });
 
-const success = (position) => {
+const geoLocationSuccess = (position) => {
   let coordinates = position.coords;
   let { latitude:lat, longitude:lon} = coordinates
   getCurrentLocation(lat, lon)
@@ -58,6 +58,18 @@ const success = (position) => {
   .then((data) => {addWeatherReport(data)})});
 }
 
+const updateLocations = () => {
+  locations = [];
+  const locationsFix = document.querySelectorAll('.city_name');
+  locationsFix.forEach(loc => {
+    locations.push(loc.innerHTML.toLowerCase());
+  });
+
+  console.log(locations);
+
+  localStorage.setItem('Locations', JSON.stringify(locations));
+
+}
 
 forcast();
 

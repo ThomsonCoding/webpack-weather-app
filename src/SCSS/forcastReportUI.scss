@@ -29,11 +29,12 @@ $sub-colour: #ffffffb0;
 }
 
 .today_mini_header {
+  text-align: left;
   font-size: 0.8rem;
   line-height: 1.5;
   font-weight: 400;
   color: $sub-colour;
-  margin: 20px 5px 30px 5px;
+  margin: 20px 5px 10px 25px;
 }
 
 .hourly__container {
@@ -68,14 +69,34 @@ $sub-colour: #ffffffb0;
   background-color: #3c84dc;
 }
 
+.dayTimeTempSection {
+  padding: 5px;
+}
+
 .mini_temp {
   color: $sub-colour;
-  padding: 10px 15px;
+  padding: 2px 15px;
+  margin: 0;
+  text-align: left;
+  font-size: 0.8rem;
 }
 
 .hour_image_icon {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
+}
+
+.big_temp {
+  color: $sub-colour;
+  padding: 2px 15px;
+  margin: 0;
+  text-align: left;
+  font-size: 2.4rem;
+}
+
+.day_image_icon {
+  height: 70px;
+  width: 70px;
 }
 
 .daily__container {
@@ -108,5 +129,5 @@ $sub-colour: #ffffffb0;
     rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  justify-content: center;
+  justify-content: space-evenly;
 }

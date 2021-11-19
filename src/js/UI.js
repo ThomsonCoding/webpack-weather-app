@@ -4,8 +4,6 @@ const weatherContainer = document.querySelector(".container");
 
 const addWeatherReport = (data) => {
 
-    console.log(data);
-
     const city = document.createElement('li');
     city.dataset.lat = data.coord.lat;
     city.dataset.lon = data.coord.lon;
